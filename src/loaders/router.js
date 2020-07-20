@@ -1,10 +1,9 @@
-import { Application } from "express";
 import * as routes from "../router";
-import { IRouter } from "../interfaces/config";
-import { API_URL } from "@constants";
+import { API_URL } from "../utils/constants";
 
-export const router = (app: Application): void => {
-  Object.values(routes).forEach((router: IRouter) =>
-    app.use(API_URL + router.path, router.router)
-  );
+export const router = (app) => {
+  Object.values(routes).forEach((router) => {
+    console.log(API_URL + router.path);
+    app.use(API_URL + router.path, router.router);
+  });
 };

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/app.ts"
+    "dev": "nodemon -r esm src/app.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -12,6 +12,7 @@
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
+    "lodash": "^4.17.19",
     "node": "^14.5.0",
     "nodemon": "^2.0.4",
     "pino": "^6.4.0",

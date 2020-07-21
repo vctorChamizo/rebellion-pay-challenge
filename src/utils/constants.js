@@ -1,5 +1,4 @@
-import dotenv from "dotenv";
-dotenv.config();
+require("dotenv").config({ path: __dirname + "/../.env" });
 
 // Enviroment
 export const PORT = process.env.PORT || "3000";
@@ -14,7 +13,3 @@ export const CLOUDINARY_URL = `cloudinary://${API_KEY}:${API_SECRET}@${CLOUD_NAM
 // Error Messages
 export const MISSING_ID = "No ID supplied";
 export const MISSING_DATA = "Data request aren't provided";
-
-// curl https://469833719843844:taehOwTLrO0WU02HBqFPQpo8YoE@api.cloudinary.com/v1_1/dbnuvqzms/metadata_fields/
-
-// curl https://<API_KEY>:<API_SECRET>@api.cloudinary.com/v1_1/<CLOUD_NAME>/resources/image

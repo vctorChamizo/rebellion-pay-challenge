@@ -80,6 +80,7 @@ typings/
 # Optional npm cache directory
 .npm
 
+
 # Optional eslint cache
 .eslintcache
 
@@ -97,7 +98,7 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
-
+yarn.lock
 # dotenv environment variables file
 .env
 .env.test
@@ -150,3 +151,4 @@ dist
 
 # CSV files
 data
+

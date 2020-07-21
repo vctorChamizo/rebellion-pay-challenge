@@ -1,10 +1,10 @@
 import { getStatistics, getCSV } from "../service";
 
-export const GetStatistics = (req, res, next) => {
+export const GetStatistics = async (req, res, next) => {
   try {
     const { page } = req.query;
 
-    const response = getStatistics(page);
+    const response = await getStatistics(page);
 
     return res.status(200).json(response);
   } catch (error) {

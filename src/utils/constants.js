@@ -11,5 +11,5 @@ export const API_SECRET = process.env.API_SECRET;
 export const CLOUDINARY_URL = `cloudinary://${API_KEY}:${API_SECRET}@${CLOUD_NAME}`;
 
 // Error Messages
-export const MISSING_ID = "No ID supplied";
-export const MISSING_DATA = "Data request aren't provided";
+export const BAD_RANGE_PAGINATION = "Page out of range";
+export const EMPTY_RESOURCES = "Response resources are empty";

@@ -1,9 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
 import * as loaders from "./loaders";
-import logger from "@log";
+import logger from "./utils/log";
 
-import { PORT } from "@constants";
+import { PORT } from "./utils/constants";
 
 const app = express();
 

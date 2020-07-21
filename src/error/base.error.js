@@ -1,6 +1,6 @@
 export class BaseError extends Error {
-  status: number;
-  constructor(message?: string, status?: number) {
+  status;
+  constructor(message, status) {
     super();
 
     Error.captureStackTrace(this, this.constructor);

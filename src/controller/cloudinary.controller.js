@@ -12,9 +12,11 @@ export const GetStatistics = async (req, res, next) => {
   }
 };
 
-export const GetCSV = (req, res, next) => {
+export const GetCSV = async (req, res, next) => {
   try {
-    const response = getCSV();
+    const { page } = req.query;
+
+    const response = await getCSV(page);
 
     return res.status(200).json(response);
   } catch (error) {

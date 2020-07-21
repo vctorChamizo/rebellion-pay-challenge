@@ -1,22 +1,14 @@
 import { PaginationError } from "../error";
-import cloudinary from "cloudinary";
+import { getCloudinaryResources } from "../loaders";
+import { createObjectCsvWriter } from "csv-writer";
 
-import { CLOUD_NAME, API_KEY, API_SECRET } from "../utils/constants";
-
-cloudinary.config({
-  cloud_name: CLOUD_NAME,
-  api_key: API_KEY,
-  api_secret: API_SECRET,
-});
+import { CSV_DATA_URL } from "../utils/constants";
 
 export const getStatistics = async (page = 50) => {
   try {
     if (page <= 0 || page > 50) throw new PaginationError();
 
-    const { resources } = await cloudinary.v2.search
-      .expression("")
-      .max_results(page)
-      .execute();
+    const { resources } = await getCloudinaryResources(page);
 
     if (resources.length === 0) throw new EmptyResourceError();
 
@@ -60,4 +52,37 @@ export const getStatistics = async (page = 50) => {
   }
 };
 
-export const getCSV = () => {};
+export const getCSV = async (page = 50) => {
+  try {
+    if (page <= 0 || page > 50) throw new PaginationError();
+
+    const { resources } = await getCloudinaryResources(page);
+
+    if (resources.length === 0) throw new EmptyResourceError();
+
+    const headerKeys = Object.keys(resources[0]);
+    const header = headerKeys.map((element) => {
+      return { id: element, title: element };
+    });
+
+    const csvWriter = createObjectCsvWriter({
+      path: CSV_DATA_URL,
+      header: header,
+    });
+
+    const data = resources.map((element) => {
+      const dataKeys = Object.keys(element);
+      const dataUnit = {};
+
+      dataKeys.map((key) => (dataUnit[key] = element[key]));
+
+      return dataUnit;
+    });
+
+    await csvWriter.writeRecords(data);
+
+    return `The CSV has been created succesfful in path: ${CSV_DATA_URL}`;
+  } catch (error) {
+    throw error;
+  }
+};

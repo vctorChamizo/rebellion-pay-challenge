@@ -4,6 +4,10 @@ require("dotenv").config({ path: __dirname + "/../.env" });
 export const PORT = process.env.PORT || "3000";
 export const API_URL = "/rebellion-test/";
 
+// Paths
+export const CSV_DATA_URL =
+  process.env.CSV_DATA_URL || `${__dirname}/../data/cloudinary.csv`;
+
 // Cloudinary
 export const CLOUD_NAME = process.env.CLOUD_NAME;
 export const API_KEY = process.env.API_KEY;

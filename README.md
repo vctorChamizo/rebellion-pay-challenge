@@ -2,14 +2,6 @@
 
 Hola Rebel! This is the test. Good luck!
 
-## Access to Cloudinary
-
-```
-cloud_name: 'dbnuvqzms',
-api_key: '469833719843844',
-api_secret: 'taehOwTLrO0WU02HBqFPQpo8YoE'
-```
-
 ## Description
 
 We would like to start to use Cloudinary to save some public photos, but we are afraid about the use some people could do of this platform.

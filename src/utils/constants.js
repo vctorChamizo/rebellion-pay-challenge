@@ -1,4 +1,4 @@
-require("dotenv").config({ path: __dirname + "/../.env" });
+require("dotenv").config();
 
 // Enviroment
 export const PORT = process.env.PORT || "3000";

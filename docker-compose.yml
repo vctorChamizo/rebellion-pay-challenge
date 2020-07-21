@@ -1,0 +1,21 @@
+version: "3"
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nodejs
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - PORT=$PORT
+      - CLOUD_NAME=$CLOUD_NAME
+      - API_KEY=$API_KEY
+      - API_SECRET=$API_SECRET
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+    command: yarn run start

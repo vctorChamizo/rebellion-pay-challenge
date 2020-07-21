@@ -53,9 +53,9 @@ wallhdpic_1_gwkxuu,,wallhdpic_1_gwkxuu,jpg,1580932187,image,upload,2020-02-05T19
 
 ## Final words
 
-You can share your work in Gitlab, Github, ... even in this server �~_~X~J
+You can share your work in Gitlab, Github, ... even in this server.
 
 There is no right or wrong here, but whatever you come up with will be considered as an indicator towards your abilities to think on your own feet and how your personality might positively impact your code. Surprise us!
 
-�~_�~X May the force be with you �~_�~X
+**May the force be with you**
 

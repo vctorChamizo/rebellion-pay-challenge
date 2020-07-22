@@ -6,7 +6,7 @@ export const API_URL = "/rebellion-test/";
 
 // Paths
 export const CSV_DATA_URL =
-  process.env.CSV_DATA_URL || `${__dirname}/../data/cloudinary.csv`;
+  process.env.CSV_DATA_URL || `${__dirname}/../cloudinary.csv`;
 
 // Cloudinary
 export const CLOUD_NAME = process.env.CLOUD_NAME;

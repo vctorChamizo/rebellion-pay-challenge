@@ -70,16 +70,16 @@ export const getCSV = async (page = 50) => {
       header: header,
     });
 
-    const data = resources.map((element) => {
-      const dataKeys = Object.keys(element);
-      const dataUnit = {};
+    // const data = resources.map((element) => {
+    //   const dataKeys = Object.keys(element);
+    //   const dataUnit = {};
 
-      dataKeys.map((key) => (dataUnit[key] = element[key]));
+    //   dataKeys.map((key) => (dataUnit[key] = element[key]));
 
-      return dataUnit;
-    });
+    //   return dataUnit;
+    // });
 
-    await csvWriter.writeRecords(data);
+    await csvWriter.writeRecords(resources);
 
     return `The CSV has been created succesfful in path: ${CSV_DATA_URL}`;
   } catch (error) {
